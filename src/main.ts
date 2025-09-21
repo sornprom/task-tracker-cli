@@ -6,7 +6,6 @@ import { commandUpdate } from "./comands/update";
 
 const args = process.argv.slice(2);
 const command = args[0];
-const commandArgs = args.slice(1);
 
 switch (command) {
     case 'add':
@@ -19,13 +18,13 @@ switch (command) {
         commandUpdate(); 
         break;
     case 'delete':
-        commandDelete(commandArgs); 
+        commandDelete(); 
         break;
     case 'mark-in-progress':
-        commandMarkInProgress(commandArgs); 
+        commandMarkInProgress(); 
         break;
     case 'mark-done':
-        commandMarkDone(commandArgs); 
+        commandMarkDone(); 
         break;
     default:
         console.log('Available commands: add, list, update, delete, mark-in-progress, mark-done');
