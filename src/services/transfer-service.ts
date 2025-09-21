@@ -37,6 +37,14 @@ export class TransferService {
 
         const allowedFlags = commandFlags[command as Command];
 
+        const flagMap: Record<string, FlagName> = {
+            '--id': 'id', '-i': 'id',
+            '--title': 'title', '-t': 'title',
+            '--desc': 'desc', '--description': 'desc', '-d': 'desc',
+            '--due': 'due', '-D': 'due',
+            '--status': 'status', '-s': 'status'
+        };
+
         const flags: Flags = {};
         const argv = process.argv.slice(2);
 
@@ -44,20 +52,25 @@ export class TransferService {
         while (i < argv.length) {
             const arg = argv[i];
 
-            if (!arg.startsWith('--')) {
+            if (!arg.startsWith('-')) {
                 i++;
                 continue;
             }
 
-            const flagName = arg.slice(2) as FlagName;
-            const next = argv[i + 1];
+            const flagName = flagMap[arg];
+            if (!flagName) {
+                console.warn(`Warning: Unknown flag "${arg}"`);
+                i++;
+                continue;
+            }
 
             if (!allowedFlags.includes(flagName)) {
                 console.warn(`Warning: Unknown or disallowed flag "${arg}" for command "${command}"`);
                 i += 2;
                 continue;
             }
-
+            
+            const next = argv[i + 1];
             switch (flagName) {
                 case 'id':
                     flags.id = next ? Number(next) : undefined;
