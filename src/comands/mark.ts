@@ -4,18 +4,18 @@ const transfer = new TransferService
 const taskService = new TaskService(transfer)
 
 function commandMarkInProgress() {
-    const id = Number(transfer.getArg(3));
+    const { id } = transfer.getFlags('mark-in-progress')
     if (!id) return console.log('Error: id is required');
 
-    const task = taskService.mark(id, 'in-progress');
+    const task = taskService.mark(Number(id), 'in-progress');
     console.log(task ? `Task #${id} marked as in-progress.` : 'Task not found.');
 }
 
 function commandMarkDone() {
-    const id = Number(transfer.getArg(3));
+    const { id } = transfer.getFlags('mark-done');
     if (!id) return console.log('Error: id is required');
 
-    const task = taskService.mark(id, 'done');
+    const task = taskService.mark(Number(id), 'done');
     console.log(task ? `Task #${id} marked as done.` : 'Task not found.');
 }
 

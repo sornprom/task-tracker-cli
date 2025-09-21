@@ -8,3 +8,5 @@ export interface TaskDetail {
     createdAt: string;
     dueDate?: string
 }
+
+export type Command = 'add' | 'list' | 'update' | 'delete' | 'mark-in-progress' | 'mark-done'
