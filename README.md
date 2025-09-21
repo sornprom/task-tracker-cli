@@ -1,4 +1,4 @@
-## Task Tracker CLI
+## Taskminal CLI
 
 A simple **command-line tool** for tracking tasks, built with **TypeScript**.  
 You can easily **add, update, delete, and list tasks** directly from your terminal.
