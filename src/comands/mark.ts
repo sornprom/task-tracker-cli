@@ -1,6 +1,7 @@
 import { TaskService } from "../services/task-service";
-
-const taskService = new TaskService()
+import { TransferService } from "../services/transfer-service";
+const transfer = new TransferService
+const taskService = new TaskService(transfer)
 
 function commandMarkInProgress(args: string[]) {
     const id = Number(args[0]);
