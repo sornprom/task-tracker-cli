@@ -27,5 +27,5 @@ switch (command) {
         commandMarkDone(); 
         break;
     default:
-        console.log('Available commands: add, list, update, delete, mark-in-progress, mark-done');
+        console.log('Available taskminal commands: add, list, update, delete, mark-in-progress, mark-done');
 }
