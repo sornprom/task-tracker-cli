@@ -10,7 +10,7 @@ const commandArgs = args.slice(1);
 
 switch (command) {
     case 'add':
-        commandAdd(commandArgs); 
+        commandAdd(); 
         break;
     case 'list':
         commandList(commandArgs); 
