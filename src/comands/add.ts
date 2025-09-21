@@ -10,7 +10,6 @@ export function commandAdd() {
   const dueIndex = process.argv.indexOf('--due')
   
   if (dueIndex !== -1) dueDate = process.argv[dueIndex + 1]
-  console.log(`duedate: ${dueDate}`)
   if (dueDate && !validate.isValidDateFormat(dueDate)) return console.log('Error: dueDate is incorrect format \nformat: DD/MM/YYYY');
   if (!title) return console.log('Error: title is required');
   const task = new TaskService(transfer).add(title, description, dueDate);
