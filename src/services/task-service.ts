@@ -21,12 +21,13 @@ export class TaskService {
         return newTask;
     }
 
-    update(id: number, title?: string, description?: string): TaskDetail | null {
+    update(id: number, title?: string, description?: string, dueDate?: string): TaskDetail | null {
         const tasks = this.transfer.load();
         const task = tasks.find(t => t.id === id);
         if (!task) return null;
         if (title) task.title = title;
         if (description) task.description = description;
+        if (dueDate) task.dueDate = dueDate;
         this.transfer.save(tasks);
         return task;
     }

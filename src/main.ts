@@ -16,7 +16,7 @@ switch (command) {
         commandList(); 
         break;
     case 'update':
-        commandUpdate(commandArgs); 
+        commandUpdate(); 
         break;
     case 'delete':
         commandDelete(commandArgs); 
