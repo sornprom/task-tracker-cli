@@ -13,7 +13,7 @@ switch (command) {
         commandAdd(); 
         break;
     case 'list':
-        commandList(commandArgs); 
+        commandList(); 
         break;
     case 'update':
         commandUpdate(commandArgs); 
