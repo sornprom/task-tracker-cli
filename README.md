@@ -68,19 +68,19 @@ node dist/main.js list
 Example command add :
 ```bash
 $ node dist/main.js add "Do homework" "math" --due "20/10/2025"
-#Task added successfully (ID: 1)
+#Output: Task added successfully (ID: 1)
 
 $ node dist/main.js list
-#1 [todo] Do homework - math (Due in 5 day(s))
+#Output: #1 [todo] Do homework - math (Due in 5 day(s))
 ```
 
 Example command update :
 ```bash
 $ node dist/main.js update 1 "" "Eng" --due "27/10/2025"
-#Task updated successfully
+#Output: Task updated successfully
 
 $ node dist/main.js list
-#1 [todo] Do homework - Eng (Due in 12 day(s))
+#Output: #1 [todo] Do homework - Eng (Due in 12 day(s))
 ---
 
 ## License
