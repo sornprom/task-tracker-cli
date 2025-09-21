@@ -60,16 +60,14 @@ export class TransferService {
             const flagName = flagMap[arg];
             if (!flagName) {
                 console.warn(`Warning: Unknown flag "${arg}"`);
-                i++;
-                continue;
+                process.exit(1);
             }
 
             if (!allowedFlags.includes(flagName)) {
                 console.warn(`Warning: Unknown or disallowed flag "${arg}" for command "${command}"`);
-                i += 2;
-                continue;
+                process.exit(1);
             }
-            
+
             const next = argv[i + 1];
             switch (flagName) {
                 case 'id':
