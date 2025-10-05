@@ -1,8 +1,8 @@
-import { commandAdd } from "./comands/add";
-import { commandDelete } from "./comands/delete";
-import { commandList } from "./comands/list";
-import { commandMarkDone, commandMarkInProgress } from "./comands/mark";
-import { commandUpdate } from "./comands/update";
+import { commandAdd } from "./commands/add";
+import { commandDelete } from "./commands/delete";
+import { commandList } from "./commands/list";
+import { commandMarkDone, commandMarkInProgress } from "./commands/mark";
+import { commandUpdate } from "./commands/update";
 import { resolveCommand } from "./utils/resolve-command";
 
 const args = process.argv.slice(2);
