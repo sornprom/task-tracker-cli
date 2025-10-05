@@ -29,7 +29,7 @@ export class TransferService {
         const commandFlags: Record<Command, FlagName[]> = {
             add: ['id', 'title', 'desc', 'due'],
             list: ['status'],
-            update: ['title', 'desc', 'due'],
+            update: ['title', 'desc', 'due', 'id'],
             delete: ['id'],
             'mark-in-progress': ['id'],
             'mark-done': ['id'],
