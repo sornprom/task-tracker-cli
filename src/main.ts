@@ -1,31 +1,33 @@
-import { commandAdd } from "./comands/add";
-import { commandDelete } from "./comands/delete";
-import { commandList } from "./comands/list";
-import { commandMarkDone, commandMarkInProgress } from "./comands/mark";
-import { commandUpdate } from "./comands/update";
+import { commandAdd } from "./commands/add";
+import { commandDelete } from "./commands/delete";
+import { commandList } from "./commands/list";
+import { commandMarkDone, commandMarkInProgress } from "./commands/mark";
+import { commandUpdate } from "./commands/update";
+import { resolveCommand } from "./utils/resolve-command";
 
 const args = process.argv.slice(2);
-const command = args[0];
+const rawCommand = args[0];
+const command = resolveCommand(rawCommand);;
 
 switch (command) {
     case 'add':
-        commandAdd(); 
+        commandAdd();
         break;
     case 'list':
-        commandList(); 
+        commandList();
         break;
     case 'update':
-        commandUpdate(); 
+        commandUpdate();
         break;
     case 'delete':
-        commandDelete(); 
+        commandDelete();
         break;
     case 'mark-in-progress':
-        commandMarkInProgress(); 
+        commandMarkInProgress();
         break;
     case 'mark-done':
-        commandMarkDone(); 
+        commandMarkDone();
         break;
     default:
-        console.log('Available commands: add, list, update, delete, mark-in-progress, mark-done');
+        console.log('Available taskminal commands: add, list, update, delete, mark-in-progress, mark-done');
 }

@@ -1,7 +1,6 @@
 import { TaskDetail, TaskStatus } from "../models/tasks";
 import { TransferService } from "./transfer-service";
 
-
 export class TaskService {
 
     constructor(private readonly transfer: TransferService) { }
