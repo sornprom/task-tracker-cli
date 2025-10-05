@@ -16,7 +16,6 @@ const formatTaskLine = (task: TaskDetail): string => {
             line += ` (Overdue by ${Math.abs(diffDays)} day(s))`;
         }
     }
-
     return line;
 };
 

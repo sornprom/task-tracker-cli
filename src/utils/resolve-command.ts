@@ -3,7 +3,7 @@ const commandAlias: Record<string, string> = {
   a: "add",
 
   list: "list",
-  l: "list",
+  ls: "list",
 
   update: "update",
   u: "update",
