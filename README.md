@@ -99,7 +99,10 @@ $ node dist/main.js list
 
 ## Latest Update Versions
 See full details in [CHANGELOG.md](./CHANGELOG.md)
-- Version **0.3.0** adds short command & flag support.  
+- Version **0.3.0**: Added short command & flag support
+- Version **0.2.0**: Added due date, display due date and overdue status
+- Version **0.1.0**: Initial release of Taskminal CLI
+
 
 ---
 ## License
