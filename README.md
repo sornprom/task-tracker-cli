@@ -29,32 +29,35 @@ npm install
 ## Usage
 
 #### Development mode (TypeScript with ts-node)
-```bash
-npx ts-node src/main.ts add --title "Homework" --desc "Math report" --due "20/10/2025"
-npx ts-node src/main.ts update 7 --due "22/10/2025"
-npx ts-node src/main.ts list
-```
-    - short flags example
-```bash
-npx ts-node src/main.ts a -t "Finish report" -d "Q4 report" -D "2025-10-10"
-```
+ - Run the app:
+    - `Long form` example:
+    ```bash
+    npx ts-node src/main.ts add --title "Homework" --desc "Math report" --due "20/10/2025"
+    npx ts-node src/main.ts update 7 --due "22/10/2025"
+    npx ts-node src/main.ts list
+    ```
+    - `Short form` example:
+    ```bash
+    npx ts-node src/main.ts a -t "Finish report" -d "Q4 report" -D "2025-10-10"
+    ```
 #### Production mode (compiled JavaScript)
-compile TypeScript:
-```bash
-npx tsc
-```
-Run the app:
-```bash
-node dist/main.js add --title "Homework" --desc "Math report" --due "20/10/2025"
-node dist/main.js update 7 --due "22/10/2025"
-node dist/main.js list
-```
-    - short flags example
-```bash
-node dist/main.js a -t "Finish report" -d "Q4 report" -D "2025-10-10"
-```
+ - compile TypeScript:
+    ```bash
+    npx tsc
+    ```
+ - Run the app:
+    - `Long form` example:
+    ```bash
+    node dist/main.js add --title "Homework" --desc "Math report" --due "20/10/2025"
+    node dist/main.js update 7 --due "22/10/2025"
+    node dist/main.js list
+    ```
+    - `Short form` example:
+    ```bash
+    node dist/main.js a -t "Finish report" -d "Q4 report" -D "2025-10-10"
+    ```
 > **Note:** 
-- See full details in [docs/flag.md](./docs/flag.md)
+- See full `Long/Short form` details in [docs/flag.md](./docs/flag.md)
 ---
 
 ## Commands
