@@ -30,7 +30,7 @@ npm install
 
 #### Development mode (TypeScript with ts-node)
  - Run the app:
-    - `Long form` example:
+    - `Full form` example:
     ```bash
     npx ts-node src/main.ts add --title "Homework" --desc "Math report" --due "20/10/2025"
     npx ts-node src/main.ts update 7 --due "22/10/2025"
@@ -46,7 +46,7 @@ npm install
     npx tsc
     ```
  - Run the app:
-    - `Long form` example:
+    - `Full form` example:
     ```bash
     node dist/main.js add --title "Homework" --desc "Math report" --due "20/10/2025"
     node dist/main.js update 7 --due "22/10/2025"
@@ -57,7 +57,7 @@ npm install
     node dist/main.js a -t "Finish report" -d "Q4 report" -D "2025-10-10"
     ```
 > **Note:** 
-- See full `Long/Short form` details in [docs/flag.md](./docs/flag.md)
+- See full `Full/Short form` details in [docs/flag.md](./docs/flag.md)
 ---
 
 ## Commands

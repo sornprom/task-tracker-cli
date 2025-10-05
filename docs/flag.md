@@ -1,6 +1,6 @@
-# Flags & Short Commands
+# Flags & Commands
 
-## Short Commands
+## Commands
 | Full Command | Short | Description |
 |--------------|-------|-------------|
 | `add`        | `a`   | Add a new task |
