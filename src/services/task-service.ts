@@ -48,9 +48,16 @@ export class TaskService {
         return task;
     }
 
-    list(status?: TaskStatus): TaskDetail[] {
-        const tasks = this.transfer.load();
+    list(status?: TaskStatus, keyword?:string): TaskDetail[] {
+        let tasks = this.transfer.load();
         if (status) return tasks.filter(t => t.status === status);
+        if (keyword) {
+            const kw = keyword.toLowerCase()
+            tasks = tasks.filter(tasks =>
+                tasks.title?.toLowerCase().includes(kw) ||
+                tasks.description?.toLocaleLowerCase().includes(kw)
+            )
+        }
         return tasks;
     }
 }

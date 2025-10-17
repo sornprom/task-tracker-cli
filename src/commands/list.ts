@@ -6,11 +6,11 @@ import { validate } from "../utils/validate";
 
 export function commandList() {
   const transfer = new TransferService();
-  const { status } = transfer.getFlags('list');
+  const { status, keyword } = transfer.getFlags('list');
   if (status && !validate.isAllowStatus(status)) {
     return console.log('Status not allowed');
   }
-  const tasks = new TaskService(transfer).list(status as TaskStatus | undefined);
+  const tasks = new TaskService(transfer).list(status as TaskStatus | undefined, keyword);
   if (!tasks.length) return console.log('No tasks found.');
 
   const lines = calculateDueDateLines(tasks);

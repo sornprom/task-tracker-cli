@@ -8,6 +8,7 @@ export interface Flags {
     desc?: string;
     due?: string;
     status?: string;
+    keyword?: string;
 }
 
 export class TransferService {
@@ -28,7 +29,7 @@ export class TransferService {
         type FlagName = keyof Flags;
         const commandFlags: Record<Command, FlagName[]> = {
             add: ['id', 'title', 'desc', 'due'],
-            list: ['status'],
+            list: ['status','keyword'],
             update: ['title', 'desc', 'due', 'id'],
             delete: ['id'],
             'mark-in-progress': ['id'],
@@ -42,7 +43,9 @@ export class TransferService {
             '--title': 'title', '-t': 'title',
             '--desc': 'desc', '--description': 'desc', '-d': 'desc',
             '--due': 'due', '-D': 'due',
-            '--status': 'status', '-s': 'status'
+            '--status': 'status', '-s': 'status',
+            '--keyword': 'keyword', '-k': 'keyword'
+
         };
 
         const flags: Flags = {};
@@ -84,6 +87,9 @@ export class TransferService {
                     break;
                 case 'status':
                     flags.status = next;
+                    break;
+                case 'keyword':
+                    flags.keyword = next;
                     break;
             }
             i += 2;
