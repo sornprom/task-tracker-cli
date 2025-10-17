@@ -6,9 +6,9 @@ const formatTaskLine = (task: TaskDetail): string => {
     if (task.description) line += ` - ${task.description}`;
 
     if (task.dueDate) {
-        const today = new Date();
-        const due = moment(task.dueDate, 'DD/MM/YYYY').toDate();
-        const diffDays = Math.ceil((due.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+        const today = moment().startOf('day');
+        const due = moment(task.dueDate, 'DD/MM/YYYY').startOf('day');
+        const diffDays = due.diff(today, 'days');
 
         if (diffDays >= 0) {
             line += ` (Due in ${diffDays} day(s))`;
