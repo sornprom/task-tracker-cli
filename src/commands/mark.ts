@@ -1,9 +1,9 @@
 import { TaskService } from "../services/task-service";
 import { TransferService } from "../services/transfer-service";
-const transfer = new TransferService
-const taskService = new TaskService(transfer)
 
 function commandMarkInProgress() {
+    const transfer = new TransferService
+    const taskService = new TaskService(transfer)
     const { id } = transfer.getFlags('mark-in-progress')
     if (!id) return console.log('Error: id is required');
 
@@ -12,6 +12,8 @@ function commandMarkInProgress() {
 }
 
 function commandMarkDone() {
+    const transfer = new TransferService
+    const taskService = new TaskService(transfer)
     const { id } = transfer.getFlags('mark-done');
     if (!id) return console.log('Error: id is required');
 

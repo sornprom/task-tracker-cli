@@ -4,15 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf ./dist && npx tsc" 
+    "test": "jest",
+    "compile": "rm -rf ./dist && npx tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.5.2",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
