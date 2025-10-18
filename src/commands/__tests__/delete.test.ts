@@ -9,7 +9,7 @@ describe('commandDelete', () => {
   let consoleLogSpy: jest.SpyInstance;
 
   beforeEach(() => {
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => { });
   });
 
   afterEach(() => {

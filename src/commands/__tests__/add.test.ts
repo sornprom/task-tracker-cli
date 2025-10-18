@@ -1,12 +1,12 @@
 import {
-  commandAdd
-} from '../add';
-import {
   TaskService
 } from '../../services/task-service';
 import {
   TransferService
 } from '../../services/transfer-service';
+import {
+  commandAdd
+} from '../add';
 
 jest.mock('../../services/task-service');
 jest.mock('../../services/transfer-service');
@@ -15,7 +15,7 @@ describe('commandAdd', () => {
   let consoleLogSpy: jest.SpyInstance;
 
   beforeEach(() => {
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => { });
   });
 
   afterEach(() => {
